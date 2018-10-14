@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>GRAFICACION Y ANIMACION</title>
+    <title>Clean Blog - Start Bootstrap Theme</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="index.html">DER BEGINN</a>
+        <a class="navbar-brand" href="index.html">Start Bootstrap</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -53,72 +53,30 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/docker-logo.svg')">
+    <header class="masthead" style="background-image: url('img/about-bg.jpg')">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="post-heading">
-              <h1>INSTALAR DOCKER EN UBUNTU Y WORDPRESS</h1>
-              <span class="meta">Posted by
-                <a href="#">Andres Lara</a>
-                on Oktober 3, 2018</span>
+            <div class="page-heading">
+              <h1>About Me</h1>
+              <span class="subheading">This is what I do.</span>
             </div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Post Content -->
-    <article>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-             <h2 class="section-heading">ACERCA DE DOCKER</h2>
-            <p>Docker es un proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.2​ Docker utiliza características de aislamiento de recursos del kernel Linux, tales como cgroups y espacios de nombres (namespaces) para permitir que "contenedores" independientes se ejecuten dentro de una sola instancia de Linux, evitando la sobrecarga de iniciar y mantener máquinas virtuales.3​</p>
-
-            <h2 class="section-heading">PASOS PARA INSTALAR DOCKER</h2>
-
-            <p>Para poder instalar docker en ubuntu se requiere de una serie de pasos, el problema para realizar esta instalacion es la falta de trabajo en OS libres como lo es ubuntu, esto hizo que la tarea de instalar docker se volviera algo dificil al principio.
-            Pero una vez logrado puedes darte cuenta que enrealidad no es nada del otro mundo.</p>
-            <dl>
-            <dt>*Primero actualizamos los paquetes apt</dt>
-            <dd>sudo apt-get update</dd>
-            </dl>
-            <dl>
-            <dt>*Luego instalamos los paquetes que permitiran a apt utilizar repositorios HTTP</dt>
-            <dd>sudo apt-get install apt-transport-https ca-certificates curl software-properties-common</dd>
-            <dt>*Agregamos el GPG KEY Oficial de Docker</dt>
-            <dd>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</dd>
-            <dt>*Con el siguiente codigo configuramos el repositorio stable de Docker</dt>
-            <dd>sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"</dd>
-            <dt>*Actualizamos nuevamente los paquetes apt</dt>
-            <dd>sudo apt-get update</dd>
-            <dt>*Finalmente instalamos docker-ce</dt>
-            <dd>sudo apt-get install docker-ce</dd>
-            </dl>
-
-            <blockquote class="blockquote">Ahora que instalamos docker podemos crear contenedores</blockquote>
-
-            <dl>
-              <dt>*Contenedor de MySQL</dt>
-              <dd>docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</dd>
-              <dt>*Contenedor de WORDPRESS</dt>
-              <dd>docker run --name wordpress --link mysql:mysql -p 8080:80 -d wordpress</dd>
-            </dl>
-
-            <h2 class="section-heading">WORDPRESS</h2>
-
-            <p>Ahora que instalamos el contenedor de wordpress solo hace falta ir a la direccion de nuestra pagina y configurar wordpress normalmente</p>
-
-            <a href="#">
-              <img class="img-fluid" src="img/wordpress-4-9-img-5.png" alt="">
-            </a>
-            
-          </div>
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
         </div>
       </div>
-    </article>
+    </div>
 
     <hr>
 
