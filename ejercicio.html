@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+	<title>Parametros de las funciones</title>
+
+	<script type="text/javascript">
+		function sub(){
+			var asterisco="*";
+			var i;
+			var contador =1;
+			var valor = parseInt(document.getElementById("valor").value);
+			var tipo=(valor%2)?"Impar":"Par";
+			if(tipo=="Par"){
+			document.getElementById("mensaje").innerHTML="Error el valor es "+tipo;	
+			}else{
+				for(i=valor;i>=1;i--){
+					for(var x=0;x<=valor;x++){
+					    document.write(" ");	
+					}
+					for(var y=1; y<=contador; y++){
+						document.write(asterisco);
+					}
+					document.write("<br/>");
+					contador +=1;
+				}
+				for (var r = valor-1; r>=1; r--){
+					for(var n = valor-1; n>=r; n--){
+						document.write(" ");
+						document.write("<span style=\"color:white;font-size: 1em; font-family:arial, helvetica, sans-serif;\">/<\/span>");
+					}
+					for (var m = 2; m<=contador-1;m++){
+						document.write("*");
+					}
+					document.write("<br/>");
+					contador-=1;
+				}
+			}
+			return false;
+		}
+	</script>
+</head>
+<body>
+<p id="mensaje"></p>
+<input type="text" id="valor" oninput="return sub()">
+</body>
+</html>
