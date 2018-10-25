@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jqUERY ui dROPPABLE - dEFAULT FUNCTIONALITY</title>
+<link REL="STYLESHEET" HREF="//CODE.JQUERY.COM/UI/1.12.1/THEMES/BASE/JQUERY-UI.CSS">
+<LINK REL="STYLESHEET" HREF="/RESOURCES/DEMOS/STYLE.CSS">
+<style>
+#DRAGGABLE { WIDTH: 100PX; HEIGHT: 100PX; PADDING: 0.5EM; FLOAT: LEFT; MARGIN: 10PX 10PX 10PX 0; }
+#DROPPABLE { WIDTH: 150PX; HEIGHT: 150PX; PADDING: 0.5EM; FLOAT: LEFT; MARGIN: 10PX; }
+</style>
+<script SRC="HTTPS://CODE.JQUERY.COM/JQUERY-1.12.4.JS"></script>
+<SCRIPT SRC="HTTPS://CODE.JQUERY.COM/UI/1.12.1/JQUERY-UI.JS"></SCRIPT>
+<SCRIPT>
+	$( function() {
+		$( "#draggable" ).draggable();
+		$( "#droppable" ).droppable({
+			drop: function( event, ui ) {
+				$( this )
+				.addClass("ui-state-highlight")
+				.find("p")
+				.html("Dropped!");
+			}
+		});
+	} );
+</SCRIPT>
+</head>
+<body>
+	<DIV ID="draggable" CLASS="UI-WIDGET-CONTENT">
+		<P>DRAG ME TO MY TARGET</P>
+	</DIV>
+	<DIV ID="droppable" CLASS="UI-WIDGET-HEADER">
+		<P>DROP HERE</P>
+		</DIV>
+</body>
+</html>
+		
