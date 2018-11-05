@@ -84,7 +84,7 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <p>In diese übung, wir haben eine Flaggen gebildet, benutzen canvas und svg zu bilden die Sterne und die Farben.</p>
-            <p>Wir konnen mer information lernen über svg und canvas in <a href="https://www.w3schools.com/default.asp">w3schools.com</a></p>
+            <p>Wir können mehr information lernen über svg und canvas in <a href="https://www.w3schools.com/default.asp">w3schools.com</a></p>
              <h2 class="section-heading">SVG FLAGGE</h2>
              <svg xmlns="http://www.w3.org/2000/svg" width="400" height="290">
       <rect width="150" height="100" style="fill:rgb(255,255,255);stroke-width:none;stroke:rgb(0,0,0)" />
@@ -112,48 +112,7 @@
 <canvas id="canvas" width="400" height="300" style="border: 1px solid black">
 </canvas>
 
-<script>
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-drawFlag();
-drawStar(100,70,5,30,15,'blue');
-drawStar(300,217,5,30,15,'red');
-function drawFlag() {
-  ctx.fillStyle = "rgb(255,0,0)";
-  ctx.fillRect(200, 0, 200, 150);
-  ctx.fillStyle = "rgb(0,0,255)";
-  ctx.fillRect(0, 150, 200, 150);
 
-}
- function drawStar(posicionx,posiciony,puntas,radioexterno,radiointerno,color){
-      var rot=Math.PI/2*3;
-      var x=posicionx;
-      var y=posiciony;
-      var step=Math.PI/puntas;
-      var colorstar=color;
-
-      ctx.beginPath();
-      ctx.moveTo(posicionx,posiciony-radioexterno)
-      for(i=0;i<puntas;i++){
-        x=posicionx+Math.cos(rot)*radioexterno;
-        y=posiciony+Math.sin(rot)*radioexterno;
-        ctx.lineTo(x,y)
-        rot+=step
-
-        x=posicionx+Math.cos(rot)*radiointerno;
-        y=posiciony+Math.sin(rot)*radiointerno;
-        ctx.lineTo(x,y)
-        rot+=step
-      }
-      ctx.lineTo(posicionx,posiciony-radioexterno);
-      ctx.closePath();
-      ctx.lineWidth=5;
-      ctx.strokeStyle=colorstar;
-      ctx.stroke();
-      ctx.fillStyle=colorstar;
-      ctx.fill();
-    }
-</script>
           <p>CANVAS CODE</p>
             <a href="#">
               <img class="img-fluid" src="img/canvaspart1.PNG" alt="">
@@ -216,6 +175,7 @@ function drawFlag() {
 
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
+    <script src="js/banderacanvas.js"></script>
 
   </body>
 
