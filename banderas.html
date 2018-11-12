@@ -21,11 +21,12 @@
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="css/codefont.css">
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     <!-- Custom styles for this template -->
     <link href="css/clean-blog.min.css" rel="stylesheet">
@@ -86,7 +87,7 @@
             <p>In diese übung, wir haben eine Flaggen gebildet, benutzen canvas und svg zu bilden die Sterne und die Farben.</p>
             <p>Wir können mehr information lernen über svg und canvas in <a href="https://www.w3schools.com/default.asp">w3schools.com</a></p>
              <h2 class="section-heading">SVG FLAGGE</h2>
-             <svg xmlns="http://www.w3.org/2000/svg" width="400" height="290">
+             <svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
       <rect width="150" height="100" style="fill:rgb(255,255,255);stroke-width:none;stroke:rgb(0,0,0)" />
       <g transform="translate(37,17)">
         <polygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" style="fill:blue;stroke:none;stroke-width:2;fill-rule:nonzero;"/>
@@ -100,31 +101,71 @@
         Sorry, your brow ser does not support inline SVG.  
     </svg>
     <p>SVG CODE</p>
-            <a href="#">
-              <img class="img-fluid" src="img/bandersvg.PNG" alt="">
-            </a>
-    <form method="get" action="banderasvg.txt">
-      <p>DOWNLOAD SVG CODE</p>
-      <button type="submit" class="btn btn-primary">DOWNLOAD</button>
-    </form>
-
+      <pre class="line-numbers">
+    <code class="language-markup">
+      &ltsvg xmlns="http://www.w3.org/2000/svg" width="400" height="600">
+      &ltrect width="150" height="100" style="fill:rgb(255,255,255);stroke-width:none;stroke:rgb(0,0,0)" />
+      &ltg transform="translate(37,17)">
+        &ltpolygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" style="fill:blue;stroke:none;stroke-width:2;fill-rule:nonzero;"/>
+        &lt/g>
+      &ltrect x="150" y="0" width="150" height="100" style="fill:rgb(255,0,0);stroke-width:none;stroke:rgb(0,0,0)"/>
+        &ltrect x="0" y="100" width="150" height="100" style="fill:rgb(0,0,255);stroke-width:none;stroke:rgb(0,0,0)"/>
+        &ltrect x="150" y="100" width="150" height="100" style="fill:rgb(255,255,255);stroke-width:none;stroke:rgb(0,0,0)"/>
+        &ltg transform="translate(190,120)">
+        &ltpolygon points="25,2.5 10,49.5 47.5,19.5 2.5,19.5 40,49.5" style="fill:red;stroke:none;stroke-width:2;fill-rule:nonzero;"/>
+        &lt/g>
+        Sorry, your brow ser does not support inline SVG. 
+    </svg>
+    </code>
+    </pre>
             <h2 class="section-heading">CANVAS FLAGGE</h2>
 <canvas id="canvas" width="400" height="300" style="border: 1px solid black">
 </canvas>
-
-
           <p>CANVAS CODE</p>
-            <a href="#">
-              <img class="img-fluid" src="img/canvaspart1.PNG" alt="">
-            </a>
-            <p></p>
-            <a href="#">
-              <img class="img-fluid" src="img/canvaspart2.PNG" alt="">
-            </a>
-            <form method="get" action="banderacanvas.txt">
-      <p>DOWNLOAD CANVAS CODE</p>
-      <button type="submit" class="btn btn-primary">DOWNLOAD</button>
-    </form>
+          <pre class="line-numbers">
+          <code class="language-javascript">
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+drawFlag();
+drawStar(100,70,5,30,15,'blue');
+drawStar(300,217,5,30,15,'red');
+function drawFlag() {
+  ctx.fillStyle = "rgb(255,0,0)";
+  ctx.fillRect(200, 0, 200, 150);
+  ctx.fillStyle = "rgb(0,0,255)";
+  ctx.fillRect(0, 150, 200, 150);
+
+}
+ function drawStar(posicionx,posiciony,puntas,radioexterno,radiointerno,color){
+      var rot=Math.PI/2*3;
+      var x=posicionx;
+      var y=posiciony;
+      var step=Math.PI/puntas;
+      var colorstar=color;
+
+      ctx.beginPath();
+      ctx.moveTo(posicionx,posiciony-radioexterno)
+      for(i=0;i < puntas;i++){
+        x=posicionx+Math.cos(rot)*radioexterno;
+        y=posiciony+Math.sin(rot)*radioexterno;
+        ctx.lineTo(x,y)
+        rot+=step
+
+        x=posicionx+Math.cos(rot)*radiointerno;
+        y=posiciony+Math.sin(rot)*radiointerno;
+        ctx.lineTo(x,y)
+        rot+=step
+      }
+      ctx.lineTo(posicionx,posiciony-radioexterno);
+      ctx.closePath();
+      ctx.lineWidth=5;
+      ctx.strokeStyle=colorstar;
+      ctx.stroke();
+      ctx.fillStyle=colorstar;
+      ctx.fill();
+    }
+          </code>
+          </pre>
           </div>
         </div>
       </div>
@@ -172,11 +213,10 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="js/prism.js"></script>
     <!-- Custom scripts for this template -->
     <script src="js/clean-blog.min.js"></script>
     <script src="js/banderacanvas.js"></script>
-
   </body>
 
 </html>
